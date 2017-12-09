@@ -1,4 +1,4 @@
-require 'rack/lobster'
+require_relative 'alexa'
 
 map '/health' do
   health = proc do |env|
@@ -7,8 +7,8 @@ map '/health' do
   run health
 end
 
-map '/lobster' do
-  run Rack::Lobster.new
+map '/alexa' do
+  run Alexa.new
 end
 
 map '/headers' do
